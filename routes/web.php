@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ClassController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home', ['name' => 'udin', 'role' => 'admin']);
 });
+
+Route::get('/students',[StudentController::class, 'index']);
+Route::get('/classroom',[ClassController::class, 'index']);
