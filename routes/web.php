@@ -20,4 +20,11 @@ Route::get('/', function () {
 });
 
 Route::get('/students',[StudentController::class, 'index']);
+Route::get('/students-add',[StudentController::class, 'create']);
+Route::post('/student',[StudentController::class, 'store']);
+Route::get('/students-edit/{id}',[StudentController::class, 'edit']);
+Route::put('/student/{id}',[StudentController::class, 'update']);
+Route::get('/students-hapus/{id}',[StudentController::class, 'hapus']);
+Route::delete('/students-destroy/{id}',[StudentController::class, 'destroy']);
+
 Route::get('/classroom',[ClassController::class, 'index']);

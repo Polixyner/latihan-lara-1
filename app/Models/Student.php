@@ -9,6 +9,10 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id';
+
+    public function class()
+    {
+        return $this->belongsTo(Classroom::class);
+    }
     
 }
